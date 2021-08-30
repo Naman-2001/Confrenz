@@ -9,24 +9,24 @@ const SettingsProvider = ({ children }) => {
   const [language, setLanguage] = useState("text/x-c++src");
   const [fontSize, setFontSize] = useState(16);
   const [tabSize, setTabSize] = useState(2);
-  const [theme, setTheme] = useState("vscode-dark");
+  const [theme, setTheme] = useState("material-ocean");
   const [keybind, setKeybinds] = useState("sublime");
-  const [pistonLang, setPistonLang] = useState("c++")
+  const [pistonLang, setPistonLang] = useState("c++");
   const [langVersion, setLangVersion] = useState("10.2.0");
 
   useEffect(() => {
     socket.on("emit-lang-change", (lang) => {
       setLanguage(lang.mirrorName);
-      setPistonLang(lang.pistonName)
-    setLangVersion(lang.version)
+      setPistonLang(lang.pistonName);
+      setLangVersion(lang.version);
     });
   }, []);
 
   const handleLanguageChange = (value, roomid) => {
     console.log(languages[value]);
     setLanguage(value);
-    setPistonLang(languages[value].pistonName)
-    setLangVersion(languages[value].version)
+    setPistonLang(languages[value].pistonName);
+    setLangVersion(languages[value].version);
     socket.emit("language-change", { lang: languages[value], roomId: roomid });
   };
 

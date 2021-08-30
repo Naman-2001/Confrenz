@@ -37,7 +37,7 @@ require("codemirror/addon/fold/xml-fold.js");
 //Themes
 require("codemirror/theme/material.css");
 require("codemirror/theme/material-ocean.css");
-require("codemirror/theme/vscode-dark.css");
+// require("codemirror/theme/vscode-dark.css");
 require("codemirror/theme/neat.css");
 require("codemirror/theme/monokai.css");
 

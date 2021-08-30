@@ -107,7 +107,7 @@ const Settingspanel = () => {
                   onChange={(e) => handleThemeChange(e.target.value)}
                 >
                   <option value="neat">neat</option>
-                  <option value="vscode-dark">vscode-dark</option>
+                  {/* <option value="vscode-dark">vscode-dark</option> */}
                   <option value="material-ocean">material-ocean</option>
                   <option value="material">material</option>
                   <option value="monokai">monokai</option>
