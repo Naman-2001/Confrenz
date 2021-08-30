@@ -1,0 +1,44 @@
+.wrapper {
+  height: 100%;
+  padding: 10px;
+  background: #060606;
+  color: white;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  /* font-size: xx-large;
+  font-weight: bold; */
+}
+
+.docnameinput {
+  border: 0;
+  padding: 7px;
+  border-radius: 3px;
+  font-size: medium;
+}
+
+.docnameinput:focus-visible {
+  outline: #f4af1b auto 1px;
+}
+
+.identiconwrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  margin: 0 -10px;
+}
+
+.identicon {
+  max-width: 55% !important;
+  max-height: 55% !important;
+}

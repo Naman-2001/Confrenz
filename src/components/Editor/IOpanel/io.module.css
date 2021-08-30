@@ -1,0 +1,82 @@
+.iowrapper {
+  background: #1f222e;
+  height: 8%;
+  color: white;
+  display: flex;
+  position: relative;
+  /* z-index: 1400; */
+  z-index: 100;
+}
+
+.inputbutton {
+  width: 100px;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.outputbutton {
+  width: 100px;
+  background: #c4c4c4;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rundiv {
+  height: 100%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.runbutton {
+  color: rgb(244, 175, 27) !important;
+  border: 2px solid rgb(244, 175, 27) !important;
+  padding: 5px 20px !important;
+  background: white;
+  width: 200px;
+  height: 40px;
+  font-weight: bold !important;
+}
+
+.runbutton:hover {
+  background-color: white !important;
+}
+
+.drawer {
+  height: 30vh !important;
+  bottom: 55px !important;
+  position: absolute !important;
+  max-height: initial !important;
+}
+
+.closed {
+  transform: none !important;
+}
+
+.inputfield {
+  height: 65%;
+  background: #cccccc;
+  resize: none;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 20px;
+  font-family: "Roboto";
+  margin: 20px;
+  /* color: #bd1d1d; */
+  cursor: default;
+}

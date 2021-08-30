@@ -1,0 +1,11 @@
+.jitsicontainer {
+  height: 91% !important;
+}
+
+.toolbarwrapper {
+  height: 8%;
+  background: #1f222e;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

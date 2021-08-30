@@ -1,0 +1,14 @@
+.drawer {
+  height: 35vh !important;
+}
+
+.inputfield {
+  height: 28vh;
+  /* background: grey; */
+  resize: none;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  padding: 20px;
+  font-family: "Roboto";
+}

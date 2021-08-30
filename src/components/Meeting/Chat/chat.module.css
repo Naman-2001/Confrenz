@@ -1,0 +1,74 @@
+.ownerdiv {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0 0 0;
+}
+
+.owner {
+  color: white;
+  /* height: 30px; */
+  background: #7cd27c;
+  max-width: 400px;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px 15px 0px 15px;
+}
+
+.otherdiv {
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px 0 0 0;
+}
+
+.admindiv {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 0 0;
+}
+
+.adminmessage {
+  border-radius: 15px;
+  background-color: lightgray;
+  width: fit-content;
+  padding: 10px;
+}
+
+.others {
+  color: white;
+  /* height: 30px; */
+  background: grey;
+  max-width: 400px;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px 15px 15px 0px;
+}
+
+.sendmessagebox {
+  position: absolute;
+  bottom: 0;
+  height: 8%;
+  background: #1f222e;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.messageinput {
+  height: 40px;
+  font-family: "Roboto";
+  width: 80%;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  background: #dedcdc;
+  font-size: 17px;
+  padding: 10px;
+}
+
+.sendbutton {
+  color: white !important;
+  background: #f4af1b !important;
+}

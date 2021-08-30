@@ -1,0 +1,8 @@
+.active {
+  display: block;
+  height: 94%;
+}
+
+.inactive {
+  display: none;
+}

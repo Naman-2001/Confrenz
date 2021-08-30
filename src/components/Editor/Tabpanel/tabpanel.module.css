@@ -1,0 +1,23 @@
+.tabswrapper {
+  height: 6%;
+  background: #10111f;
+  /* padding: 0 30px; */
+  display: flex;
+  align-items: flex-end;
+}
+
+.tab {
+  color: white;
+  background: #1f222e;
+  font-style: italic;
+  min-width: 100px;
+  padding: 0 20px;
+  margin: 0 10px;
+  border-radius: 5px 5px 0 0;
+  height: 80%;
+  cursor: pointer;
+}
+
+.tab > p {
+  line-height: 35px;
+}

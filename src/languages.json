@@ -1,0 +1,32 @@
+{
+  "javascript": {
+    "version": "16.3.0",
+    "displayName": "JavaScript",
+    "pistonName": "javascript",
+    "mirrorName": "javascript"
+  },
+  "text/x-c++src": {
+    "version": "10.2.0",
+    "displayName": "C++",
+    "pistonName": "c++",
+    "mirrorName": "text/x-c++src"
+  },
+  "text/x-java": {
+    "version": "15.0.2",
+    "displayName": "Java",
+    "pistonName": "java",
+    "mirrorName": "text/x-java"
+  },
+  "python": {
+    "version": "3.9.4",
+    "displayName": "Python3",
+    "pistonName": "python",
+    "mirrorName": "python"
+  },
+  "text/x-csrc": {
+    "version": "10.2.0",
+    "displayName": "C",
+    "pistonName": "c",
+    "mirrorName": "text/x-csrc"
+  }
+}

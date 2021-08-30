@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+a {
+  color: transparent !important;
+  text-decoration: none !important;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", Ubuntu;
+}
+
+/* body {
+  height: 100vh;
+} */
+
+/* ::-webkit-scrollbar-track {
+  border: 2px solid blue;
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 3px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  width: 3px;
+} */

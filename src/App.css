@@ -1,0 +1,17 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.MuiOutlinedInput-input {
+  padding: 0px 10px !important;
+}
+
+.CodeMirror-scroll {
+  padding: 0px !important;
+}
+
+.MuiToolbar-dense {
+  min-height: 45px !important;
+}
