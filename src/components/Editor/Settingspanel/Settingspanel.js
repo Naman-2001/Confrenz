@@ -12,9 +12,9 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Tooltip } from "@material-ui/core";
-import languages from "../../../languages.json";
+import IconButton from "@material-ui/core/IconButton";
 
-const Settingspanel = () => {
+const Settingspanel = ({ handleFileChange }) => {
   const {
     language,
     theme,
@@ -157,12 +157,25 @@ const Settingspanel = () => {
             justifyContent: "flex-end",
           }}
         >
-          <Tooltip title={"Upload File"} placement="bottom" arrow>
-            <Button style={{ color: "white" }}>
-              <BackupIcon />
-            </Button>
-          </Tooltip>
-          {/* <Button style={{ color: "white" }}>
+          <input
+            style={{ display: "none" }}
+            id="icon-button-file"
+            type="file"
+            onChange={(e) => handleFileChange(e)}
+          />
+          <label htmlFor="icon-button-file">
+            <Tooltip title={"Upload File"} placement="bottom" arrow>
+              <IconButton
+                style={{ color: "white" }}
+                aria-label="upload picture"
+                component="span"
+              >
+                <BackupIcon />
+              </IconButton>
+            </Tooltip>
+          </label>
+
+          {/* <Button style={{ color: "white" }} onClick={autoFormatSelection}>
             <RotateLeftIcon />
           </Button> */}
           <Tooltip title={"Settings"} placement="bottom" arrow>

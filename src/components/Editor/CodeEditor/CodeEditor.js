@@ -50,6 +50,23 @@ const CodeEditor = () => {
     setOutput(value);
   };
 
+  const handleFileChange = (e) => {
+    console.log("clicked");
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsText(file);
+
+    reader.onload = () => {
+      setCode(reader.result);
+      console.log(reader.result);
+    };
+
+    reader.onerror = () => {
+      console.log("file error", reader.error);
+    };
+  };
+
   const submit = async () => {
     setIsloading(true);
     const client = piston({ server: "https://emkc.org" });
@@ -94,7 +111,7 @@ const CodeEditor = () => {
     <div style={{ height: "100%", overflowY: "hidden" }}>
       <Tabspanel handleTab={handleTab} activeTab={activeTab} />
       <div className={activeTab === "main" ? styles.active : styles.inactive}>
-        <Settingspanel />
+        <Settingspanel handleFileChange={handleFileChange} />
         <MainEditor code={code} handleCodeChange={handleCodeChange} />
         <IOpanel
           input={input}
