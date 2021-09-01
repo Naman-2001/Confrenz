@@ -13,8 +13,10 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Tooltip } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-
-const Settingspanel = ({ handleFileChange }) => {
+import GetAppIcon from "@material-ui/icons/GetApp";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
+import copy from "copy-to-clipboard";
+const Settingspanel = ({ handleFileChange,TextFile,code }) => {
   const {
     language,
     theme,
@@ -157,6 +159,16 @@ const Settingspanel = ({ handleFileChange }) => {
             justifyContent: "flex-end",
           }}
         >
+          <Tooltip title={"Copy Code"} placement="bottom" arrow>
+            <Button style={{ color: "white" }} onClick={()=>{copy(code)}} > 
+              <FileCopyIcon />
+            </Button>
+          </Tooltip>
+          <Tooltip title={"Download File"} placement="bottom" arrow>
+            <Button style={{ color: "white" }} onClick={TextFile}>
+              <GetAppIcon />
+            </Button>
+          </Tooltip>
           <input
             style={{ display: "none" }}
             id="icon-button-file"

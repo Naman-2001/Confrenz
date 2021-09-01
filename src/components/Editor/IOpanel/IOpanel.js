@@ -4,7 +4,13 @@ import styles from "./io.module.css";
 import Drawer from "@material-ui/core/Drawer";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PropagateLoad from "../../../hooks/Loader/Clockloader";
-
+import KeyboardIcon from "@material-ui/icons/Keyboard";
+import { Tooltip } from "@material-ui/core";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 const IOpanel = ({
   input,
   output,
@@ -29,8 +35,84 @@ const IOpanel = ({
     setOpen(true);
   };
 
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
+
   return (
     <div className={styles.iowrapper}>
+      <Dialog
+        open={openDialog}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+        // maxWidth={"md"}
+        // fullWidth={true}
+      >
+        <DialogTitle id="form-dialog-title">Keyboard Shortcuts</DialogTitle>
+        <DialogContent style={{ width: "600px" }}>
+          <DialogContentText>
+            <Grid container className={styles.setting}>
+              <Grid item sm={6}>
+                <h4>Run code</h4>
+              </Grid>
+              <Grid item sm={6}>
+                CTRL + ENTER
+              </Grid>
+            </Grid>
+            <Grid container className={styles.setting}>
+              <Grid item sm={6}>
+                <h4>To indent one level</h4>
+              </Grid>
+              <Grid item sm={6}>
+                TAB
+              </Grid>
+            </Grid>
+            <Grid container className={styles.setting}>
+              <Grid item sm={6}>
+                <h4>Two indent one fewer level</h4>
+              </Grid>
+              <Grid item sm={6}>
+                SHIFT + TAB
+              </Grid>
+            </Grid>
+            <Grid container className={styles.setting}>
+              <Grid item sm={6}>
+                <h4>Move line up/down</h4>
+              </Grid>
+              <Grid item sm={6}>
+                CTRL + SHIFT + UP / DOWN
+              </Grid>
+            </Grid>
+            <Grid container className={styles.setting}>
+              <Grid item sm={6}>
+                <h4>Duplicate line</h4>
+              </Grid>
+              <Grid item sm={6}>
+                CTRL + SHIFT + D
+              </Grid>
+            </Grid>
+            <Grid container className={styles.setting}>
+              <Grid item sm={6}>
+                <h4>Comment/uncomment selection</h4>
+              </Grid>
+              <Grid item sm={6}>
+                CTRL + /
+              </Grid>
+            </Grid>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
       <Drawer
         anchor={"bottom"}
         open={open}
@@ -90,6 +172,11 @@ const IOpanel = ({
         </Grid>
         <Grid item sm={6}>
           <div className={styles.rundiv}>
+            <Tooltip title={"Keyboard Shortcuts"} placement="bottom" arrow>
+              <Button style={{ color: "white" }} onClick={handleClickOpen}>
+                <KeyboardIcon />
+              </Button>
+            </Tooltip>
             <Button
               className={styles.runbutton}
               onClick={() => {

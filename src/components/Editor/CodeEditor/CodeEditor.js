@@ -50,6 +50,17 @@ const CodeEditor = () => {
     setOutput(value);
   };
 
+  const TextFile = () => {
+    const element = document.createElement("a");
+    const file = new Blob([code], {
+      type: "text/plain",
+    });
+    element.href = URL.createObjectURL(file);
+    element.download = "myNotes.txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
   const handleFileChange = (e) => {
     console.log("clicked");
     const file = e.target.files[0];
@@ -111,7 +122,11 @@ const CodeEditor = () => {
     <div style={{ height: "100%", overflowY: "hidden" }}>
       <Tabspanel handleTab={handleTab} activeTab={activeTab} />
       <div className={activeTab === "main" ? styles.active : styles.inactive}>
-        <Settingspanel handleFileChange={handleFileChange} />
+        <Settingspanel
+          handleFileChange={handleFileChange}
+          TextFile={TextFile}
+          code={code}
+        />
         <MainEditor code={code} handleCodeChange={handleCodeChange} />
         <IOpanel
           input={input}
