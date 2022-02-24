@@ -5,6 +5,7 @@ import SettingsContext from "./services/SettingsContext";
 import RoomClientContext from "./services/RoomClientContext";
 import Home from "./Home";
 import Room from "./pages/Room/Room";
+import LoginHooks from "./pages/Login/Login";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <div style={{ height: "100%" }}>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={LoginHooks} />
           <Route path="/:id/:roomid" component={Room} />
           <Route exact path="/:roomid" component={Room} />
         </Switch>
