@@ -27,16 +27,9 @@ const MainEditor = ({ code, handleCodeChange }) => {
 
     const provider = new WebsocketProvider(
       "wss://codeio-backend.herokuapp.com/",
-      // `ws://localhost:8000`,
+      // `ws://localhost:5000`,
       roomId,
       ydoc
-      // {
-      //   signaling: [
-      //     "wss://signaling.yjs.dev",
-      //     "wss://y-webrtc-signaling-eu.herokuapp.com",
-      //     "wss://y-webrtc-signaling-us.herokuapp.com",
-      //   ],
-      // }
     );
     const awareness = provider.awareness;
     // Define a shared text type on the document
@@ -52,30 +45,12 @@ const MainEditor = ({ code, handleCodeChange }) => {
     });
 
     let status;
-
-    // provider.on("status", (event) => {
-    //   console.log(event.status); // logs "connected" or "disconnected"
-    //   status = event.status;
-    //   if (event.status == "connected") {
     const _codemirrorBinding = new CodemirrorBinding(
       yText,
       editorInstance,
       provider.awareness
     );
-    //   }
-    // });
-    // awareness.on("change", () => {
-    //   setUsers([]);
-    //   awareness.getStates().forEach((state) => {
-    //     if (state.user) {
-    //       console.log(state.user);
-    //       setUsers((prev) => {
-    //         return [...prev, state.user];
-    //       });
-    //     }
-    //   });
-    // });
-  }, [editorInstance, roomId]);
+  }, [editorInstance, roomId, curClientInfo]);
 
   const handleEditorDidMount = (editor) => {
     setEditorInstance(editor);

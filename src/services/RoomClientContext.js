@@ -6,7 +6,7 @@ const RoomClientProvider = ({ children }) => {
   const [clientId, setClientId] = useState("");
   const [roomId, setRoomId] = useState("");
   const [allUsers, setAllUsers] = useState([]);
-
+  const [curUser, setCurUser] = useState(null);
   const [curClientInfo, setCurClientInfo] = useState({});
 
   const handleClientId = (value) => {
@@ -25,6 +25,10 @@ const RoomClientProvider = ({ children }) => {
     setCurClientInfo(value);
   };
 
+  const handleCurUser = (value) => {
+    setCurUser(value);
+  };
+
   return (
     <RoomClientContext.Provider
       value={{
@@ -32,10 +36,12 @@ const RoomClientProvider = ({ children }) => {
         roomId,
         allUsers,
         curClientInfo,
+        curUser,
         handleClientId,
         handleRoomId,
         handleAllUsers,
         handleCurClientInfo,
+        handleCurUser,
       }}
     >
       {children}

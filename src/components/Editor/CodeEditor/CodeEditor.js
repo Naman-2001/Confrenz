@@ -9,8 +9,10 @@ import { socket } from "../../../services/socket";
 import { useParams } from "react-router-dom";
 import piston from "piston-client";
 import { useSettingsContext } from "../../../services/SettingsContext";
+import { useRoomClientContext } from "../../../services/RoomClientContext";
+import Drawnew from "../Drawingboard/Drawnew";
 
-const CodeEditor = () => {
+const CodeEditor = ({ fetchedCode }) => {
   const [code, setCode] = useState("");
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
@@ -21,6 +23,7 @@ const CodeEditor = () => {
   const [isLoading, setIsloading] = useState(false);
 
   const { pistonLang, langVersion } = useSettingsContext();
+  const { allUsers } = useRoomClientContext();
 
   useEffect(() => {
     socket.on("emit-input", (inp) => {
@@ -33,6 +36,10 @@ const CodeEditor = () => {
       setIsError(err);
     });
   }, []);
+
+  // useEffect(() => {
+  //   setCode(fetchedCode);
+  // }, [fetchedCode]);
 
   const handleTab = (value) => {
     setActiveTab(value);
@@ -143,7 +150,7 @@ const CodeEditor = () => {
         // style={{ height: "90%" }}
         className={activeTab === "whiteboard" ? styles.active : styles.inactive}
       >
-        <Draw />
+        <Drawnew />
       </div>
     </div>
   );

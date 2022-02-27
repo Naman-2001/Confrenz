@@ -17,12 +17,20 @@ import { useRoomClientContext } from "../../services/RoomClientContext";
 import { socket } from "../../services/socket";
 import { useParams } from "react-router-dom";
 import randomcolor from "randomcolor";
+import axiosInstance from "../../services/api";
 
 const Room = () => {
-  const { handleAllUsers, handleClientId, handleRoomId, handleCurClientInfo } =
-    useRoomClientContext();
+  const {
+    handleAllUsers,
+    handleClientId,
+    handleRoomId,
+    handleCurClientInfo,
+    curUser,
+  } = useRoomClientContext();
 
-  const guestName = uniqueNamesGenerator({
+  const [fetchedCode, setFetchedCode] = useState("");
+
+  const randomName = uniqueNamesGenerator({
     dictionaries: [adjectives, animals, colors], // colors can be omitted here as not used
     length: 2,
   });
@@ -32,15 +40,24 @@ const Room = () => {
   const { roomid } = useParams();
 
   const prepareData = () => {
+    let guestName;
+    if (curUser) {
+      guestName = curUser.firstName + " " + curUser.lastName;
+    } else {
+      guestName = randomName;
+    }
     const user = {
-      guestName: guestName,
+      guestName,
       roomID: roomid,
       color: userColor,
     };
     handleCurClientInfo(user);
 
+    // const { data } = await axiosInstance.get(`/room/data/${roomid}`);
+    // console.log(data);
+    // setFetchedCode(data);
     return {
-      guestName: guestName,
+      guestName,
       roomID: roomid,
       color: userColor,
     };
@@ -59,14 +76,14 @@ const Room = () => {
     socket.on("roomData", ({ users }) => {
       handleAllUsers(users);
     });
-  }, []);
+  }, [roomid]);
 
   return (
     <div style={{ height: "100vh", overflow: "hidden" }}>
       <Header />
       <ReflexContainer orientation="vertical" style={{ height: "91%" }}>
         <ReflexElement className="left-pane" minSize="600">
-          <CodeEditor />
+          <CodeEditor fetchedCode={fetchedCode} />
         </ReflexElement>
 
         <ReflexSplitter style={{ width: "10px" }} />
