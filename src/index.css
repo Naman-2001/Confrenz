@@ -45,3 +45,8 @@ body {
   border-radius: 20px;
   width: 3px;
 } */
+
+canvas {
+  width: 1850px !important;
+  height: 580px !important;
+}

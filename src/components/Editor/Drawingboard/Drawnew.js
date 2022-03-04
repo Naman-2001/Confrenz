@@ -21,14 +21,14 @@ const Drawnew = () => {
   };
 
   return (
-    // <div>
-    <DrawingBoard
-      userId={clientId}
-      operations={operations}
-      onChange={(newOp, afterOp) => handleDraw(newOp, afterOp)}
-      toolbarPlacement={"left"}
-    />
-    // </div>
+    <div style={{ width: "100%", height: "100%" }}>
+      <DrawingBoard
+        userId={clientId}
+        operations={operations}
+        onChange={(newOp, afterOp) => handleDraw(newOp, afterOp)}
+        // toolbarPlacement={""}
+      />
+    </div>
   );
 };
 
