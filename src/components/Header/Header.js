@@ -47,7 +47,7 @@ const Header = () => {
                 </Tooltip>
               ))}
             </div>
-            <Button
+            {/* <Button
               style={{
                 background: "#F4AF1B",
                 color: "grey",
@@ -55,7 +55,7 @@ const Header = () => {
               }}
             >
               Share
-            </Button>
+            </Button> */}
           </div>
         </Grid>
       </Grid>
