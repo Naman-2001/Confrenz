@@ -27,7 +27,7 @@ const Header = () => {
             width="50px"
             style={{ marginRight: "10px" }}
           />
-          <h1>Confrenz</h1>
+          <h1 style={{color:'white'}}>Confrenz</h1>
         </Grid>
         <Grid sm={4} item style={{ textAlign: "right", padding: "0 20px" }}>
           <div style={{ display: "flex", justifyContent: "flex-end" }}>

@@ -87,7 +87,7 @@ const CodeEditor = ({ fetchedCode }) => {
 
   const submit = async () => {
     setIsloading(true);
-    const client = piston({ server: "https://emkc.org" });
+    const client = piston();
     const result = await client.execute({
       language: pistonLang,
       version: langVersion,
