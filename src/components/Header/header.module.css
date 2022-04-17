@@ -2,7 +2,7 @@
   height: 100%;
   padding: 10px;
   background: #060606;
-  color: white;
+  color: black;
   align-items: center;
 }
 
@@ -11,6 +11,7 @@
   display: flex;
     justify-content: center;
     align-items: center;
+    color:white
   /* font-size: xx-large;
   font-weight: bold; */
 }
@@ -20,6 +21,7 @@
   padding: 7px;
   border-radius: 3px;
   font-size: medium;
+  color:black
 }
 
 .docnameinput:focus-visible {
